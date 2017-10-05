@@ -11,7 +11,7 @@ import logging
 import os
 
 SITE_ID = settings.__dict__['_wrapped'].__class__.SITE_ID = make_tls_property()
-TEMPLATE_DIRS = settings.__dict__['_wrapped'].__class__.TEMPLATE_DIRS = make_tls_property(settings.TEMPLATE_DIRS)
+TEMPLATE_DIRS = settings.__dict__['_wrapped'].__class__.TEMPLATES['DIRS'] = make_tls_property(settings.TEMPLATES['DIRS'])
 
 class DynamicSitesError(Exception):
     pass
