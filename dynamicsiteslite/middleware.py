@@ -289,7 +289,7 @@ class DynamicSitesHandler(object):
             if v == target_domain:
                 return k
 
-class DynamicSitesMiddleware(object):
+class DynamicSitesMiddleware(MiddlewareMixin):
     def process_request(self, request):
         request.dynamic_sites_handler = DynamicSitesHandler()
         return request.dynamic_sites_handler.process_request(request)
